@@ -1,4 +1,4 @@
-public class MyClass {
+public class MyClass implements Comparable {
     public static void main(String[] args) {
         System.out.println("Done!2");
         System.out.println(args[0]);
@@ -21,5 +21,10 @@ public class MyClass {
 
     /*static*/ int myMethod() {
         return 1;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
