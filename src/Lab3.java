@@ -4,8 +4,8 @@ public class Lab3 {
         System.out.println("Done!");
 
 //        String string = "Done!";
-        String string = new String("Done!");
-        String string2 = new String("Done!");
+        String string = "Done!";
+        String string2 = "Done!";
         System.out.println(string);
         System.out.println(string.length());
 
@@ -28,5 +28,15 @@ public class Lab3 {
         System.out.println(string.equals(string2));
         System.out.println(string.hashCode());
         System.out.println(string2.hashCode());
+
+        String s = "ASD";
+        String s2 = s;
+        s += "QWERTY";
+        System.out.println(s);
+        System.out.println(s2);
+
+        StringBuilder stringBuilder3 = new StringBuilder("ASD");
+        stringBuilder3.append("QWERTY");
+        System.out.println(stringBuilder3);
     }
 }
