@@ -37,6 +37,15 @@ public class Lab3 {
 
         StringBuilder stringBuilder3 = new StringBuilder("ASD");
         stringBuilder3.append("QWERTY");
+        stringBuilder3.append("QWERTYQWERTY");
+//        stringBuilder3.
         System.out.println(stringBuilder3);
+
+        StringBuffer stringBuffer = new StringBuffer();
+//        stringBuffer.append(\u0001);
+        stringBuffer.append('1');
+        char c = 1;
+        stringBuffer.append(c);
+        System.out.println(stringBuffer);
     }
 }
