@@ -9,13 +9,13 @@ import java.util.Comparator;
 
 class Car {
 
-    String[] models = new String[]{"Nissan", "Porsche", "Audi", "Hyundai", "Ford",
-            "Volkswagen", "Honda", "BMW", "Mercedes-Benz", "Toyota"};
+    /*static final String[] MODELS = new String[]{"Nissan", "Porsche", "Audi", "Hyundai", "Ford",
+            "Volkswagen", "Honda", "BMW", "Mercedes-Benz", "Toyota"};*/
 
 
     private int personalNumber;
     private int price;
-    private String model;
+    private Model model;
     private int maxSpeed;
     private int weight;
     private boolean hasOpenedRoof;
@@ -23,7 +23,7 @@ class Car {
     public Car() {
         this.personalNumber = (int) (Math.random() * 10000 + 1); // [1-9999]
         this.price = (int) (Math.random() * 1000000 + 50000); // [1-1050000]
-        this.model = models[(int) (Math.random() * 11 - 1)];  // [0-10]
+        this.model = MODELS[(int) (Math.random() * 11 - 1)];  // [0-10]
         this.maxSpeed = (int) (Math.random() * 500 + 1); // [1-500];
         this.weight = (int) (Math.random() * 100 + 1); // [1-100];
         this.hasOpenedRoof = ((Math.random() - 0.5) > 0); // [0-1];
