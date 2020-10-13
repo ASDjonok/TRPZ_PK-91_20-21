@@ -25,18 +25,25 @@ public class Main {
                 new Cosmetics(1, "L'Oreal Paris 4", 2, 10, "France"),
         };
 
-        System.out.println("\u001B[35m" + Arrays.toString(cosmeticsArray));
 
 //        cosmeticsArray[0].setCost(2);
         cosmeticsArray[0].setCost(Integer.MIN_VALUE);
-        System.out.println(cosmeticsArray[0].getCost());
+        System.out.println("\u001B[35m" + "UnSorted array: \n"  + Arrays.toString(cosmeticsArray));
+//        System.out.println(cosmeticsArray[0].getCost());
 
         Arrays.sort(cosmeticsArray);
-        System.out.println("\u001B[35m" + Arrays.toString(cosmeticsArray));
+        System.out.println("\u001B[35m" + "Sorted with Comparable: \n" + Arrays.toString(cosmeticsArray));
+
+//        MyComparator myComparator = new MyComparator();
 
 //        System.out.println(cosmeticsArray[0].compareTo(cosmeticsArray[1]));
 //        cosmeticsArray[0].cost = 1;
 
 //        System.out.println(cosmetics);
+        Arrays.sort(cosmeticsArray, new CostCosmeticsComparator().reversed());
+        System.out.println("Sorted with reversed CostCosmeticsComparator: \n" + Arrays.toString(cosmeticsArray));
+
+        Arrays.sort(cosmeticsArray, new BrandCosmeticsComparator());
+        System.out.println("Sorted with BrandCosmeticsComparator: \n" + Arrays.toString(cosmeticsArray));
     }
 }
