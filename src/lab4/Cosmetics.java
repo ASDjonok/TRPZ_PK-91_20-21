@@ -40,6 +40,11 @@ public class Cosmetics implements Comparable<Cosmetics> {
         return brand;
     }
 
+    public int getVolume() {
+        return volume;
+    }
+
+
     /*@Override
     public int compareTo(Object o) {
         return 0;

@@ -1,6 +1,8 @@
 package lab4;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,5 +47,31 @@ public class Main {
 
         Arrays.sort(cosmeticsArray, new BrandCosmeticsComparator());
         System.out.println("Sorted with BrandCosmeticsComparator: \n" + Arrays.toString(cosmeticsArray));
+
+        Arrays.sort(cosmeticsArray, new Comparator<Cosmetics>() {
+            @Override
+            public int compare(Cosmetics o1, Cosmetics o2) {
+                return Integer.compare(o1.getVolume(), o2.getVolume());
+            }
+        });
+        System.out.println("Sorted with Anonymous class by volume: \n" + Arrays.toString(cosmeticsArray));
+
+        Arrays.sort(cosmeticsArray, (o1, o2) -> Integer.compare(o1.getCost(), o2.getCost()));
+        System.out.println("Sorted with Lambda by cost: \n" + Arrays.toString(cosmeticsArray));
+
+        Arrays.sort(cosmeticsArray, Comparator.comparingInt(Cosmetics::getVolume));
+        System.out.println("Sorted with Comparator.comparingInt by volume: \n" + Arrays.toString(cosmeticsArray));
+
+        Arrays.sort(cosmeticsArray,
+                Comparator
+                        .comparingInt(Cosmetics::getCost)
+                        .thenComparing(
+                                Comparator
+                                        .comparing(Cosmetics::getBrand)
+                                        .reversed()
+                        )
+        );
+        System.out.println("Sorted with chain of Comparator's method by cost and brand: \n" + Arrays.toString(cosmeticsArray));
+
     }
 }
