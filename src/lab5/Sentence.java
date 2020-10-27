@@ -6,4 +6,8 @@ public class Sentence {
 
 //    private Object[] wordsAndPunctuations;
     private SentenceMember[] sentenceMembers/* = {new Word(), new Punctuation()*//*, new Letter('a')*//*}*/;
+
+    public Sentence(String sentenceString) {
+        String[] splitSentenceElementsStrings = sentenceString.split("(?=[,.!?])|\\s");
+    }
 }
