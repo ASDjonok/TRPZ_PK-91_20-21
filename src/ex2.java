@@ -42,7 +42,7 @@ public class ex2 {
 
         for (short i = 0, max; i < wideOfArray; i++) {
             max = array[0][i];
-            for (byte j = 0; j < heightOfArray; j++) {
+            for (byte j = 1; j < heightOfArray; j++) {
                 if (array[j][i] > max) {
                     max = array[j][i];
                 }
