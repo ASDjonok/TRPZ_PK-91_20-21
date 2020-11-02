@@ -16,15 +16,15 @@ import java.util.regex.Pattern;
 
 public class ex3 {
 
-    public static synchronized ArrayList<String> process_string(StringBuilder inputText, String regExpression) {
+    public static ArrayList<String> process_string(StringBuilder inputText, String regExpression) {
 
-        Pattern p = Pattern.compile(regExpression);  // Встановлюємо шаблон потрібних набірів символів
-        Matcher m = p.matcher(inputText);  // "Прив'язуємо" текст на обробку
+        Pattern pattern1 = Pattern.compile(regExpression);  // Встановлюємо шаблон потрібних набірів символів
+        Matcher matcher1 = pattern1.matcher(inputText);  // "Прив'язуємо" текст на обробку
 
         ArrayList<String> words = new ArrayList<>();  // Створюємо динамічний масив, який буде містити слова тексту
         String tmp; // Допоміжна змінна для збереження слова для перевірки його на повторюваність
-        while (m.find()) {
-            tmp = inputText.substring(m.start(), m.end());
+        while (matcher1.find()) {
+            tmp = inputText.substring(matcher1.start(), matcher1.end());
             if (!words.contains(tmp)) {
                 words.add(tmp);
             }
@@ -35,10 +35,10 @@ public class ex3 {
     public static StringBuilder process_text(StringBuilder inputText,
                                              String replacer,
                                              String regExpression) {
-        Pattern p = Pattern.compile(regExpression);  // Встановлюємо шаблон потрібних набірів символів
-        Matcher m = p.matcher(inputText);  // "Прив'язуємо" текст на обробку
+        Pattern pattern1 = Pattern.compile(regExpression);  // Встановлюємо шаблон потрібних набірів символів
+        Matcher matcher1 = pattern1.matcher(inputText);  // "Прив'язуємо" текст на обробку
         // Заміняємо вказану послідовність символів на іншу послідовність символів та повертаємо текст
-        return new StringBuilder(m.replaceAll(replacer));
+        return new StringBuilder(matcher1.replaceAll(replacer));
     }
 
     public static StringBuilder read_file(String fullPath) {
@@ -69,7 +69,7 @@ public class ex3 {
         // Читання, обробка та запис змісту файлу у змінну text
         // Оброблюємо за допомогою Regular Expressions.
         // В данному випадку прибираємо зайві символи чисел та точок для точного визначення початку першого речення
-        StringBuilder text = process_text(read_file(filePath), "", "[\\d]+[.,]*[\\d]*\\s*");
+        StringBuilder text = process_text(read_file(filePath), "", "\\d+[.,]*\\d*\\s*");
 
         // Виділяємо перше речення з тексту для подальшої обробки.
         // За допомогою точок визначаємо межі першого речення.
