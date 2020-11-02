@@ -31,7 +31,7 @@ public class ex2 {
         for (byte i = 0; i < heightOfArray; i++) {
             for (byte j = 0; j < wideOfArray; j++) {
                 array[i][j] *= a;
-                System.out.print(array[i][j] + "  ");
+                System.out.print(array[i][j] + "\t");
             }
             System.out.print('\n');
         }
