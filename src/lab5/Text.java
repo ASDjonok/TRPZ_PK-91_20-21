@@ -14,4 +14,24 @@ public class Text {
             sentences[i] = new Sentence(splitSentenceStrings[i]);
         }
     }
+
+    public void swapFirstAndLastWordsInEverySentence() {
+        for (Sentence sentence : sentences) {
+            sentence.swapFirstAndLastWords();
+        }
+    }
+
+    @Override
+    public String toString() {
+        /*String textString = "";
+        for (Sentence sentence : sentences) {
+            textString += sentence.toString() + " ";
+        }
+        return textString;*/
+        StringBuilder textString = new StringBuilder();
+        for (Sentence sentence : sentences) {
+            textString.append(sentence.toString()).append(" ");
+        }
+        return textString.toString();
+    }
 }

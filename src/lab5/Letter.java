@@ -15,4 +15,9 @@ public class Letter /*implements SentenceMember*/{
     public Letter(char character) {
         this.character = character;
     }
+
+    @Override
+    public String toString() {
+        return "" + character;
+    }
 }
