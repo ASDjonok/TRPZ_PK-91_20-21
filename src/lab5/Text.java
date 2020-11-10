@@ -30,7 +30,7 @@ public class Text {
         return textString;*/
         StringBuilder textString = new StringBuilder();
         for (Sentence sentence : sentences) {
-            textString.append(sentence.toString()).append(" ");
+            textString.append(sentence.toString())/*.append(" ")*/;
         }
         return textString.toString();
     }

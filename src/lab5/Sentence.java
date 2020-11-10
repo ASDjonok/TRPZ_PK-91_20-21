@@ -30,10 +30,13 @@ public class Sentence {
     @Override
     public String toString() {
         StringBuilder sentenceString = new StringBuilder();
-        for (SentenceMember sentenceMember : sentenceMembers) {
-//            todo think about spaces between word and punctuation
+        for (int i = 0; i < sentenceMembers.length; i++) {
 //            todo think about capital letters
-            sentenceString.append(sentenceMember.toString()).append(" ");
+            sentenceString.append(sentenceMembers[i].toString());
+            if (!((sentenceMembers[i] instanceof Word) &&
+                    (i < sentenceMembers.length - 1 && sentenceMembers[i+1] instanceof Punctuation))) {
+                sentenceString.append(" ");
+            }
         }
         return sentenceString.toString();
     }
