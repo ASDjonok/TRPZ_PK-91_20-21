@@ -1,11 +1,18 @@
 package lab7;
 
+import lab6.Flower;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyCollection implements List {
+//public class MyCollection<T> implements List<T> {
+public class MyCollection implements List<Flower> {
+    private static final int INITIAL_CAPACITY = 15;
+    private Flower[] elements = new Flower[INITIAL_CAPACITY];
+    private int size = 0;
+
     @Override
     public int size() {
         return 0;
@@ -31,8 +38,20 @@ public class MyCollection implements List {
         return new Object[0];
     }
 
+    /*@Override
+    public boolean add(T t) {
+        return false;
+    }*/
+
     @Override
-    public boolean add(Object o) {
+    public boolean add(Flower o) {
+//        elements <- o => index?
+        if (elements.length == size) {
+//            todo increase array
+        }
+        elements[size++] = o;
+        /*elements[size] = o;
+        size = size + 1;*/
         return false;
     }
 
@@ -56,23 +75,43 @@ public class MyCollection implements List {
 
     }
 
-    @Override
-    public Object get(int index) {
+    /*@Override
+    public T get(int index) {
         return null;
     }
 
     @Override
-    public Object set(int index, Object element) {
+    public T set(int index, T element) {
         return null;
     }
 
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, T element) {
 
     }
 
     @Override
-    public Object remove(int index) {
+    public T remove(int index) {
+        return null;
+    }*/
+
+    @Override
+    public Flower get(int index) {
+        return null;
+    }
+
+    @Override
+    public Flower set(int index, Flower element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, Flower element) {
+
+    }
+
+    @Override
+    public Flower remove(int index) {
         return null;
     }
 
