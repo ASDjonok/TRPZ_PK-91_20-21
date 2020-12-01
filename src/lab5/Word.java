@@ -20,7 +20,6 @@ public class Word implements SentenceMember {
     public String toString() {
         StringBuilder wordString = new StringBuilder();
         for (Letter letter : letters) {
-//            todo think about spaces between word and punctuation
             wordString.append(letter.toString());
         }
         return wordString.toString();

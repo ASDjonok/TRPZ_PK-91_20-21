@@ -2,10 +2,7 @@ package lab7;
 
 import lab6.Flower;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 //public class MyCollection<T> implements List<T> {
 public class MyCollection implements List<Flower> {
@@ -15,7 +12,7 @@ public class MyCollection implements List<Flower> {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -30,7 +27,21 @@ public class MyCollection implements List<Flower> {
 
     @Override
     public Iterator iterator() {
-        return null;
+        return new Iterator() {
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                System.out.println("in hasNext()");
+                return currentIndex < size;
+            }
+
+            @Override
+            public Object next() {
+                System.out.println("in next()");
+                return elements[currentIndex++];
+            }
+        };
     }
 
     @Override
@@ -47,12 +58,18 @@ public class MyCollection implements List<Flower> {
     public boolean add(Flower o) {
 //        elements <- o => index?
         if (elements.length == size) {
-//            todo increase array
+            /*Flower[] newElementsArray = new Flower[(int)(elements.length * 1.3)];
+            for (int i = 0; i < elements.length; i++) {
+                newElementsArray[i] = elements[i];
+            }
+            elements = newElementsArray;*/
+
+            elements = Arrays.copyOf(elements, (int)(elements.length * 1.3));
         }
         elements[size++] = o;
         /*elements[size] = o;
         size = size + 1;*/
-        return false;
+        return true;
     }
 
     @Override

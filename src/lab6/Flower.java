@@ -10,4 +10,11 @@ public class Flower {
     public int getFreshness() {
         return freshness;
     }
+
+    @Override
+    public String toString() {
+        return "Flower{" +
+                "freshness=" + freshness +
+                '}';
+    }
 }
