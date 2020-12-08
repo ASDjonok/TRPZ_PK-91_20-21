@@ -1,4 +1,4 @@
-package _12_Piven;
+package _12_Півень_Назар_Олександрович;
 
 public class Ex2 {
     public static void main(String[] args) {
