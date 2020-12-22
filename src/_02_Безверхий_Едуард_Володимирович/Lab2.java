@@ -1,4 +1,4 @@
-package _02_Безрверхий;
+package _02_Безверхий_Едуард_Володимирович;
 
 public class Lab2 {
     public static void main(String[] args) {
