@@ -5,7 +5,7 @@ import lab6.Flower;
 import java.util.*;
 
 //public class MyCollection<T> implements List<T> {
-public class MyCollection implements List<Flower> {
+public class MyList implements List<Flower> {
     private static final int INITIAL_CAPACITY = 15;
     private Flower[] elements = new Flower[INITIAL_CAPACITY];
     private int size = 0;

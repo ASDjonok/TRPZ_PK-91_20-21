@@ -2,15 +2,13 @@ package lab7;
 
 import lab6.Flower;
 
-import java.util.Iterator;
-
 public class Main {
     public static void main(String[] args) {
-        MyCollection/*<Flower>*/ myCollection = new MyCollection();
-        myCollection.add(new Flower(1));
-        myCollection.add(new Flower(2));
+        MyList/*<Flower>*/ myList = new MyList();
+        myList.add(new Flower(1));
+        myList.add(new Flower(2));
         for (int i = 0; i < 14; i++) {
-            myCollection.add(new Flower(i + 3));
+            myList.add(new Flower(i + 3));
         }
 
         /*Iterator iterator = myCollection.iterator();
@@ -18,11 +16,15 @@ public class Main {
             System.out.println(iterator.next());
         }*/
 
-        for (Object o : myCollection) {
+        for (Object o : myList) {
             System.out.println(o);
         }
 
 //        Flower flower = myCollection.set(0, new Flower(1));
 //        Flower flower = myCollection.set(0, new Object());
+
+        MySet mySet = new MySet();
+        mySet.add(new Flower(1));
+        mySet.add(new Flower(2));
     }
 }
