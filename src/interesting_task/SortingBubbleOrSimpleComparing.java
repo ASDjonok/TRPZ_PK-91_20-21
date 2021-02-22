@@ -1,6 +1,6 @@
 package interesting_task;
 
-public class SortingBubble {
+public class SortingBubbleOrSimpleComparing {
     public static void main(String[] args) {
         int[] mas = {8, 2, 7, 6, 1};
         int temp = 0;
