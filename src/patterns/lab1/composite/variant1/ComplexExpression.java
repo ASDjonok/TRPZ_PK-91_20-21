@@ -20,12 +20,31 @@ public class ComplexExpression implements Expression {
         int finalPositionOfFirstExpression =
                 getFinalPositionByFirstPosition(expressionString, initialPositionOfFirstExpression);
 
-        System.out.println("First expression = " +
-                expressionString.substring(initialPositionOfFirstExpression, finalPositionOfFirstExpression));
+        String firstExpressionString =
+                expressionString.substring(initialPositionOfFirstExpression, finalPositionOfFirstExpression);
+        System.out.println("First expression = " + firstExpressionString);
 
+        String secondExpressionString =
+                expressionString.substring(finalPositionOfFirstExpression + 1, expressionString.length() - 1);
         System.out.println("Second expression = " +
-                expressionString.substring(finalPositionOfFirstExpression + 1, expressionString.length() - 1));
+                secondExpressionString);
 
+        firstExpression = getExpressionObjectByString(firstExpressionString);
+        secondExpression = getExpressionObjectByString(secondExpressionString);
+
+    }
+
+    private Expression getExpressionObjectByString(String firstExpressionString) {
+        if (OperationSymbol.isStringContainsOperationSymbol(firstExpressionString)) {
+            return new ComplexExpression(firstExpressionString);
+        } else {
+            if (Character.isAlphabetic(firstExpressionString.charAt(1))) {
+                return new Variable(firstExpressionString);
+            } else {
+                return new Constant(
+                        Integer.parseInt(firstExpressionString.substring(1, firstExpressionString.length() - 1)));
+            }
+        }
     }
 
     private int getFinalPositionByFirstPosition(String expressionString, int firstPosition) {

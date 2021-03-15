@@ -19,6 +19,15 @@ public class OperationSymbol implements Expression {
         }
     }
 
+    public static boolean isStringContainsOperationSymbol(String string) {
+        for (char allowedSymbol : ALLOWED_SYMBOLS) {
+            if (string.contains("" + allowedSymbol)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String getView() {
         return "" + symbol;
