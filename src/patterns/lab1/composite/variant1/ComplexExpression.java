@@ -16,8 +16,21 @@ public class ComplexExpression implements Expression {
     }
 
     public ComplexExpression(String expressionString) {
+//        todo think of proper naming (in real: final position + 1)
+        int finalPositionOfFirstExpression =
+                getFinalPositionByFirstPosition(expressionString, initialPositionOfFirstExpression);
+
+        System.out.println("First expression = " +
+                expressionString.substring(initialPositionOfFirstExpression, finalPositionOfFirstExpression));
+
+        System.out.println("Second expression = " +
+                expressionString.substring(finalPositionOfFirstExpression + 1, expressionString.length() - 1));
+
+    }
+
+    private int getFinalPositionByFirstPosition(String expressionString, int firstPosition) {
         int bracketsCounter = 1;
-        int currentPosition = initialPositionOfFirstExpression + 1;
+        int currentPosition = firstPosition + 1;
         do {
             if (expressionString.charAt(currentPosition) == '(') {
                 bracketsCounter++;
@@ -28,10 +41,7 @@ public class ComplexExpression implements Expression {
             }
             currentPosition++;
         } while (bracketsCounter != 0);
-
-        System.out.println("First expression = " +
-                expressionString.substring(initialPositionOfFirstExpression, currentPosition));
-
+        return currentPosition;
     }
 
     @Override
