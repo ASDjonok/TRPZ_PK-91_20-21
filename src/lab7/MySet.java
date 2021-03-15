@@ -6,6 +6,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * My SET!!!!
+ */
 public class MySet implements Set<Flower> {
 
     private Node head;
